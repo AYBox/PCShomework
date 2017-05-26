@@ -1,0 +1,16 @@
+body{
+	background-color:light blue;
+	border:6px solid green;
+}
+p{
+	text-align:center
+	}
+div{
+	float:left;
+	margin:20px;
+	border:1px solid black;
+}
+img{
+	width:150px;
+	height:150px;
+}
