@@ -25,7 +25,7 @@
     <div class = "container">
         <div class="col-xs-6 col-md-4 col-lg-3">
             <table class= "table table-striped table-bordered table-hover">
-                <caption class="text-center">First Year of Presidancy</caption>
+                <caption class="text-center">First Year of Presidency</caption>
                 <thead>
                     <tr>
                         <th>President</th>
