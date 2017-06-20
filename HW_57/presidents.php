@@ -5,10 +5,6 @@
 
     $presidents = [$president1, $president2, $president3];
 
-    /*print_r($presidents);
-    echo "<br>";
-    echo $president1[0];*/
-
     $presidents2 = array(
         ["name" => "Donald J Trump", "years" => "2017-", "age" => 70],
         ["name" => "Barack H Obama", "years" => "2009-2016", "age" => 55],
