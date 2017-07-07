@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact Us</title>
-		<link rel="stylesheet" href="normalize.css">
+
+    <link rel="stylesheet" href="normalize.css">
+    <link href="/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="rest.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/faviconRC.png">
+    <style>
+        label{
+            /*display: block;*/
+            padding: 5px;
+        }
+        input{
+            width:12em;
+        }
+        input[name="streetAddress"]{
+            width:18em;
+        }
+        input[type="submit"]{
+            margin: 20px 230px;
+        }
+        input[name="city"]{
+            width:10em;
+        }
+
+    </style>
 </head>
 <body>
     <header>
@@ -24,9 +45,40 @@
 	</header>
     <h2>Contact Us</h2>
     <form >
-        <label>First Name <input type="text" name="firstName"/></label>
-        <label>Last Name <input type="text" name="lastName"/></label>
-
+        <fieldset>
+            <legend>Customer Info</legend>
+            <label>First Name
+                <br><input type="text" name="firstName" placeholder ="required" required/>
+            </label>
+            <label>Last Name
+                <br><input type="text" name="lastName" placeholder ="required" required/>
+            </label>
+            <br>
+            <label>Street Address
+                <br><input type="text" name="streetAddress"/>
+            </label>
+            <br>
+            <label>City
+                <br><input type="text" name="city"/>
+            </label>
+            <label>State
+                <br> 
+                <select name="state">
+                    <option>select</option>
+                    <option value="1">NY</option>
+                    <option value="2">NJ</option>
+                    <option value="3">CT</option>
+                    <option value="4">PA</option>
+                </select>
+            </label>
+            <br>
+            <label>Email<br>
+                <input type="email" placeholder ="required" required>
+            </label>
+        </fieldset>
+        <hr>
+        <label>Rate Us! <input type="range" name="rating" min="0" max="5"/></label>
+        <br>
         <input type="submit"/>
     </form>
 </body>

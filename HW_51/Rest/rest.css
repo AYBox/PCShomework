@@ -96,11 +96,3 @@ h2{
 .last{
 	clear:both;
 }
-label{
-	display: block;
-    padding: 20px;
-}
-
-input[type="submit"]{
-	    margin: 20px 230px;
-}

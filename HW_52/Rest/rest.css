@@ -1,0 +1,98 @@
+* {
+			box-sizing: border-box;
+		}
+html {
+	background-color: blue;
+}
+
+
+body {
+	background-color: rgb(200, 50, 100);
+	max-width: 800px;
+	margin: 0 auto;
+	margin-top: 25px;
+	min-height: 650px;
+	padding:15px;
+}
+header, footer {
+	top: 0;
+	left:0;
+	width:100%;
+    position: fixed;
+    text-align: center;
+    /*padding: 0px 415px 0px 0px;
+    background-color: white;*/
+}
+nav{
+	color:blue;
+	text-align: right;
+	max-width: 800px;
+    margin: 0 auto;
+    padding: 1px 0px;
+    background-color: green;
+}
+nav li{
+	display:inline;
+	margin:15px;
+}
+video{
+	width:87%;
+}
+audio{
+display: block;
+    margin: 0 auto;
+}
+.itemLeft{
+	display:inline-block;
+	width:20%;
+	vertical-align: top;
+	padding-right:10px;
+}
+.itemArticle{
+	display:inline-block;
+	width:80%;
+	padding-left: 10px;
+    border-left: solid black 1px;
+    text-align: justify;
+}
+.itemImg{
+width:100%;	
+}
+.itemOL{
+	list-style-type: square;
+}
+#Description{
+	margin-top:0px;
+}
+h1{
+	color:black;
+	font-size:50px
+}
+h2{
+	color:white
+}
+#homePage{
+	text-align:center;
+}
+#rest{
+	height:50%;
+	width:50%;
+}
+#menu{
+	color:yellow;
+}
+.menuItem{
+	text-align:center;
+	float:left;
+	border:solid black 2px;
+	margin:10px;
+	/*width:200px;
+	height:300px;*/
+}
+.menuImg{
+	width:200px;
+	height:200px;
+}
+.last{
+	clear:both;
+}
