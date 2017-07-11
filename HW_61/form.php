@@ -1,5 +1,5 @@
 <?php
-    $months=["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    $months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     function optionGenerator($text){
         echo "<option>$text</option>";
     }

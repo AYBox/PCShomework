@@ -1,5 +1,5 @@
 <?php
-    $months=["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    $months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     if(empty($_GET['month']))
         $errors[]="You forgot to choose a month";
     elseif(!in_array($_GET['month'], $months))
@@ -15,7 +15,7 @@
         $year=$_GET['year'];
     
     function isLeapYear($year){
-        return ((($year % 4 == 0) && !($year % 100 == 0)) || ($year % 400 == 0));
+        return ((($year % 4 == 0) && ($year % 100 != 0)) || ($year % 400 == 0));
     }
     function daysInMonth($month, $year){
         $daysInMonths=[
@@ -31,7 +31,7 @@
         "November"=>"30",
         "December"=>"31"
         ];
-        if($month=="Feburary"){
+        if($month=="February"){
             if(isLeapYear($year)){
                 return "29";
             }else{
