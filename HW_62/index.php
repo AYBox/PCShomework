@@ -15,17 +15,17 @@
         $results->closeCursor();
 
         if(isset($_GET['name'])){
-        if(empty($_GET['name'])) $error = "You have not selected any sefer";
-        else{
-            $selectedSefer=$_GET['name'];
-            $query = "SELECT * FROM seforim WHERE name=\"$selectedSefer\"";
-            $results = $db->query($query);
-            $selectedSeferRow = $results->fetch();
-            $results->closeCursor();
-            if(empty($selectedSeferRow)){
-                $error="We have no info for a sefer with the name \"$selectedSefer\"";
+            if(empty($_GET['name']))
+                $error = "You have not selected any sefer";
+            else{
+                $selectedSefer=$_GET['name'];
+                $query = "SELECT * FROM seforim WHERE name=\"$selectedSefer\"";
+                $results = $db->query($query);
+                $selectedSeferRow = $results->fetch();
+                $results->closeCursor();
+                if(empty($selectedSeferRow))
+                    $error="We have no info for a sefer with the name \"$selectedSefer\"";
             }
-        }
     }
     } catch(PDOException $e) {
         die("Something went wrong " . $e->getMessage());
@@ -64,6 +64,11 @@
         <h1>Seforim Price Checker</h1>
     </header>
     <form>
+        <p>
+            To find the price of a sefer,<br>
+            select a sefer from the drop-down<br>
+            and click "Check Price"
+        </p>
         <select name="name">
             <?php foreach($allSeforimRS as $sefer): ?>
                 <option <?php if(isset($selectedSeferRow['name']) && $selectedSeferRow['name']===$sefer['name']) echo "selected" ?> > 
@@ -84,7 +89,7 @@
         endif
     ?>
     <?php
-        if(!empty($error)) echo $error;
+        if(!empty($error)) echo "<p>$error</p>";
     ?>
 </body>
 </html>
