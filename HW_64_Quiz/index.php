@@ -7,34 +7,23 @@
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
         $db = new PDO($cs, $user, $password, $options);
        
-        echo "isset".isset($_POST['name'])."<br>";
         if(isset($_POST['name'])){
-            //$statement = "DELETE FROM students WHERE NAME = :name";
-            $delete = "DELETE FROM students WHERE NAME = '{$_POST['name']}'";
-            //$statement
-            echo $delete;
-            $rowsDeleted = $db->exec($delete);
+            $name = $_POST['name'];
+            $query = "DELETE FROM students WHERE name = :name";
+            $statement = $db->prepare($query);
+            $statement->bindValue('name', $name);
+            $statement->execute();
         }
 
         $query = "SELECT DISTINCT name FROM students";
         $results = $db->query($query);
-        $students = $results->fetchall(PDO::FETCH_ASSOC);
-        print_r($students);
+        $students = $results->fetchall(PDO::FETCH_COLUMN);
         foreach($students as $student){
-            echo $student['name']."<br>";
-        }
-        foreach($students as $student){
-            echo $student['name']."<br>";
-            $query = "SELECT grade FROM students WHERE name = '{$student['name']}'";
-            echo $query."<br>";
-            echo $student['name']."<br>";
+            $query = "SELECT grade FROM students WHERE name = '$student'";
             $results = $db->query($query);
-            echo $student['name']."<br>";
-            $grades[$student['name']] = $results->fetchall(PDO::FETCH_ASSOC);
-            echo $student['name']."<br>";
+            $grades[$student] = $results->fetchall(PDO::FETCH_COLUMN);
         }
         $results->closeCursor();
-        print_r($grades);
     } catch (PDOException $e) {
         $error = "Something went wrong " . $e->getMessage();
     }
@@ -49,6 +38,9 @@
     <title>Document</title>
 </head>
 <body class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Student Grades</h1>
+    </div>
     <table class="table table-striped table-bordered">
         <thead>
             <th>Name</th>
@@ -59,12 +51,12 @@
         <tbody>
             <?php foreach ($students as $student): ?>
                 <tr>
-                    <td><?= $student['name'] ?></td>
-                    <td><?= $grades[$student['name']]['0']['grade'] ?></td>
-                    <td><?= $grades[$student['name']]['1']['grade'] ?></td>
+                    <td><?= $student ?></td>
+                    <td><?= $grades[$student]['0'] ?></td>
+                    <td><?= $grades[$student]['1'] ?></td>
                     <td>
                         <form method="post">
-                            <input type="hidden" name="name" value="<?= $student['name'] ?>">
+                            <input type="hidden" name="name" value="<?= $student ?>">
                             <button type="submit" >Delete Student</button>
                         </form>
                     </td>
