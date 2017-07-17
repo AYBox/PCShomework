@@ -7,13 +7,13 @@
     <div class="form-group">
         <label for="name" class="col-sm-2 control-label">Sefer Name</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="name" name="name" <?php if(isset($errors) && !empty($name)) echo "value = $name" ?>>
+            <input type="text" class="form-control" id="name" name="name" required <?php if(isset($errors) && !empty($name)) echo "value = $name" ?>>
         </div>
     </div>
     <div class="form-group">    
         <label for="price" class="col-sm-2 control-label">Price</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="price" name="price" <?php if(isset($errors) && !empty($price)) echo "value = $price" ?>>
+            <input type="number" step=".01" class="form-control" id="price" name="price" required <?php if(isset($errors) && !empty($price)) echo "value = $price" ?>>
         </div>
     </div>
     <div class="form-group">
@@ -29,8 +29,7 @@
         name: <?=$selectedSefer['name'] ?><br>
         price: <?=$selectedSefer['price'] ?><br>
     </div>
-<?php endif;
-    if(isset($errors)): ?>
+<?php elseif(isset($errors)): ?>
         <div class="alert alert-danger">
             Submision failed!<br>
             <ul>

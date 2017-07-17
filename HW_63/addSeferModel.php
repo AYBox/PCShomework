@@ -11,15 +11,16 @@
             $errors[]="Price is a required field";
         }elseif(!is_numeric($_POST['price']) || $_POST['price']<=0){
             $errors[]="Price must be a numeric value greater than 0";
-        }elseif(!empty($_POST['name'])){ //if name and price are valid
+        }
+        if(empty($errors)){
             $query = "INSERT INTO `seforim`(`name`, `price`) VALUES (:name, :price)";
             include "db.php";
             try{
                 $statement = $db->prepare($query);
                 $statement->bindValue('name', $name);
                 $statement->bindValue('price', $price);
-                $rowsInseretd = $statement->execute();
-                if($rowsInseretd){
+                $success = $statement->execute();
+                if($success){
                     $query = "SELECT * FROM seforim WHERE name = :name AND price = :price";
                     $statement = $db->prepare($query);
                     $statement->bindValue('name', $name);
