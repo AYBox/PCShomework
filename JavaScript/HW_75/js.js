@@ -41,6 +41,17 @@ function onlyIf(theArray, callback, action){
 function logFound(){
     console.log("found");
 }
-console.log("onlyIf(mixed, isUpperCase, logFound): ", onlyIf(mixed, isUpperCase, logFound));
-console.log("onlyIf(upper, isUpperCase, logFound): ", onlyIf(upper, isUpperCase, logFound));
-console.log("onlyIf(lower, isUpperCase, logFound): ", onlyIf(lower, isUpperCase, logFound));
+console.log("onlyIf(mixed, isUpperCase, logFound): ");
+onlyIf(mixed, isUpperCase, logFound);
+console.log("onlyIf(upper, isUpperCase, logFound): ");
+onlyIf(upper, isUpperCase, logFound);
+console.log("onlyIf(lower, isUpperCase, logFound): ");
+onlyIf(lower, isUpperCase, logFound);
+
+
+console.log("onlyIf(mixed, isLowerCase, logFound): ");
+onlyIf(mixed, isLowerCase, logFound);
+console.log("onlyIf(upper, isLowerCase, logFound): ");
+onlyIf(upper, isLowerCase, logFound);
+console.log("onlyIf(lower, isLowerCase, logFound): ");
+onlyIf(lower, isLowerCase, logFound);
