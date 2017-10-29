@@ -2,8 +2,8 @@ for(var i = 0; i < 10; i++){
     app.counter.increment();
 }
 
-var counter1 = app.counterCreater();
-var counter2 = app.counterCreater();
+var counter1 = app.createCounter();
+var counter2 = app.createCounter();
 
 for(var i = 0; i < 5; i++){
     counter1.increment();
