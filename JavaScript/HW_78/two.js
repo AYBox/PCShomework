@@ -1,21 +1,21 @@
 var app = app || {};
-(function(){
+(function () {
     "use strict";
     var numCounterObjects = 0;
-    app.getNumCounterObjects = function(){
+    app.getNumCounterObjects = function () {
         //"use strict";
         return numCounterObjects;
     };
-    app.createCounter = function() {
+    app.createCounter = function () {
         //"use strict";
         numCounterObjects++;
         var count = 0;
         return {
-            increment : function(){
+            increment: function () {
                 count++;
                 return this;
             },
-            getCount : function(){
+            getCount: function () {
                 return count;
             }
         };
