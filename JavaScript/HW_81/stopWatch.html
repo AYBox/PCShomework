@@ -6,50 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        body {
-            box-sizing: border-box;
-        }
-
-        #mainDiv {
-            position: absolute;
-            right: 50%;
-            top: 50%;
-            display: inline-block;
-            background-color: lightblue;
-            border: solid darkblue 2px;
-            padding: 10px;
-            min-width: 180px;
-            min-height: 75px;
-            text-align: center;
-        }
-
-        #displayDiv {
-            margin-bottom: 10px;
-        }
-
-        #timeSpan {
-            font-size: 31px;
-            font-family: Miriam Fixed, Impact, Times New Roman;
-        }
-
-        button {
-            width: 45%;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="mainDiv">
-        <div id="displayDiv">
-            <span id="timeSpan">00:00:00.00</span>
-        </div>
-        <div id="buttonDiv">
-            <button id="startStopButton">Start</button>
-            <button id="resetButton">Reset</button>
-        </div>
-    </div>
     <script src="stopWatch.js"></script>
+    <script>
+        createStopwatch();
+    </script>
 </body>
 
 </html>
