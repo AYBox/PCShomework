@@ -24,6 +24,6 @@
         r = Math.trunc(Math.random() * 256);
         g = Math.trunc(Math.random() * 256);
         b = Math.trunc(Math.random() * 256);
-        body.style.background = "rgb(" + r + "," + g + "," + b + ")";
+        body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
     }
 }());
