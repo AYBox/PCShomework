@@ -1,3 +1,4 @@
+/* jshint multistr: true, unused:false */ /*jshint -W089 */
 function createStopwatch() {
     "use strict";
 
@@ -22,7 +23,7 @@ function createStopwatch() {
     buttonDiv.appendChild(startStopButton);
     buttonDiv.appendChild(resetButton);
 
-    mainDiv.setAttribute("style", "position: absolute; right: 50%; top: 50%; display: inline-block;background-color: lightblue; border: solid darkblue 2px; padding: 10px; min-width: 180px; min-height: 75px; text-align: center;");
+    mainDiv.setAttribute("style", "position: absolute; right: 50%; top: 50%; display: inline-block;background-color: lightblue; border: solid darkblue 2px; padding: 10px; text-align: center;");
     document.body.style = "box-sizing: border-box";
     displayDiv.style.marginBottom = '10px';
     timeSpan.style = 'font-size: 31px; font-family: Miriam Fixed, Times New Roman;';
