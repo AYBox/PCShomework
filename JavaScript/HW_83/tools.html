@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="theDonald">Donald Trump</h1>
+    <h1 id="pcs">PCS</h1>
+    <button id="theButton">Click Me</button>
+    <script src="tools.js"></script>
+    <script>
+        var dt = pcs.tools.wrap("theDonald");
+        var thebutton = pcs.tools.wrap("theButton");
+        dt.hide()
+            .setCss("color", "red")
+            .setCss("backgroundColor", "black");
+        thebutton.click(function () {
+            dt.show().pulsate();
+        });
+
+
+        pcs.tools.wrap("pcs")
+            .setCss("color", "yellow")
+            .setCss("backgroundColor", "green")
+            .click(function () {
+                console.log("element was clicked");
+            });
+
+    </script>
+</body>
+
+</html>
