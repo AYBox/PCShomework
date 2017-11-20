@@ -11,16 +11,16 @@ var pcs = (function () {
 
     return function (id) {
         var elem = get(id);
-        var data;
+        var data = {};
         var oldDisplayVal;
 
         return {
-            data: function (theData) {
-                if (theData === undefined) {
-                    return data;
-                } else {
-                    data = theData;
+            data: function (key, value) {
+                if (value) {
+                    data[key] = value;
                     return this;
+                } else {
+                    return data[key];
                 }
             },
             css: function (property, value) {

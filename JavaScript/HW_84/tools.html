@@ -28,12 +28,12 @@
     <script>
         var nt = pcs("newThing");
         nt.click(function () {
-            data = nt.data();
+            var data = nt.data("count");
             if (data >= 1) {
-                nt.data(++data);
+                nt.data("count", ++data);
             } else {
                 data = 1;
-                nt.data(data);
+                nt.data("count", data);
             }
             console.log("\"New Thing\" has been clicked " + data + " times");
         })
