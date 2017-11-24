@@ -1,0 +1,16 @@
+{
+    "jsonContacts": [
+        {
+            "firstName": "Donald",
+            "lastName": "Trump",
+            "email": "dt@thewhitehouse.com",
+            "phone": "800-989-7865"
+        },
+        {
+            "firstName": "Donald",
+            "lastName": "Trump",
+            "email": "dt@thewhitehouse.com",
+            "phone": "800-989-7865"
+        }
+    ]
+}
